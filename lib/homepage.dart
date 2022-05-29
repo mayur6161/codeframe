@@ -1,5 +1,6 @@
 import 'package:CodeFrame/responsive/desktop_body.dart';
 import 'package:CodeFrame/responsive/mobile_body.dart';
+import 'package:CodeFrame/responsive/mobile_contact.dart';
 import 'package:CodeFrame/responsive/responsive_layout.dart';
 import 'package:flutter/material.dart';
 

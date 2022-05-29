@@ -1,11 +1,14 @@
+import 'package:CodeFrame/responsive/mobile_contact.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:CodeFrame/colours.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/link.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../widgets/hover.dart';
+import 'contact_page.dart';
 
 class MyMobileBody extends StatelessWidget {
   const MyMobileBody({Key? key}) : super(key: key);
@@ -175,31 +178,37 @@ class MyMobileBody extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: OnHoverButton(
-                        child: Card(
-                          shadowColor: darkBlue,
-                          elevation: 5,
-                          child: Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Row(
-                              children: [
-                                Align(
-                                  alignment: Alignment.center,
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(
-                                        right: 20.0, left: 20.0),
-                                    child: Container(
-                                        height: 50,
-                                        width: 50,
-                                        child: Image.asset(
-                                            "assets/android_logo.png")),
-                                  ),
+                        child: Link(
+                          uri: Uri.parse("/contactpage"),
+                          builder: (context, followLink) => GestureDetector(
+                            onTap: followLink,
+                            child: Card(
+                              shadowColor: darkBlue,
+                              elevation: 5,
+                              child: Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Row(
+                                  children: [
+                                    Align(
+                                      alignment: Alignment.center,
+                                      child: Padding(
+                                        padding: const EdgeInsets.only(
+                                            right: 15.0, left: 10.0),
+                                        child: Container(
+                                            height: 50,
+                                            width: 50,
+                                            child: Image.asset(
+                                                "assets/android_logo.png")),
+                                      ),
+                                    ),
+                                    Text(
+                                      "Android App Development",
+                                      style: TextStyle(
+                                          fontSize: 19, fontFamily: "SFCMed"),
+                                    ),
+                                  ],
                                 ),
-                                Text(
-                                  "Android App Development",
-                                  style: TextStyle(
-                                      fontSize: 19, fontFamily: "SFCMed"),
-                                ),
-                              ],
+                              ),
                             ),
                           ),
                         ),
@@ -212,32 +221,38 @@ class MyMobileBody extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: OnHoverButton(
-                        child: Card(
-                          shadowColor: darkBlue,
-                          elevation: 5,
-                          child: Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Row(
-                              children: [
-                                Align(
-                                  alignment: Alignment.center,
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(
-                                        right: 20.0, left: 20.0),
-                                    child: Container(
-                                      height: 50,
-                                      width: 50,
-                                      child:
-                                          Image.asset("assets/Apple_logo.png"),
+                        child: Link(
+                          uri: Uri.parse("/contactpage"),
+                          builder: (context, followLink) => GestureDetector(
+                            onTap: followLink,
+                            child: Card(
+                              shadowColor: darkBlue,
+                              elevation: 5,
+                              child: Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Row(
+                                  children: [
+                                    Align(
+                                      alignment: Alignment.center,
+                                      child: Padding(
+                                        padding: const EdgeInsets.only(
+                                            right: 15.0, left: 10.0),
+                                        child: Container(
+                                          height: 50,
+                                          width: 50,
+                                          child: Image.asset(
+                                              "assets/Apple_logo.png"),
+                                        ),
+                                      ),
                                     ),
-                                  ),
+                                    Text(
+                                      "IOS App Development",
+                                      style: TextStyle(
+                                          fontSize: 19, fontFamily: "SFCMed"),
+                                    ),
+                                  ],
                                 ),
-                                Text(
-                                  "IOS App Development",
-                                  style: TextStyle(
-                                      fontSize: 19, fontFamily: "SFCMed"),
-                                ),
-                              ],
+                              ),
                             ),
                           ),
                         ),
@@ -250,31 +265,38 @@ class MyMobileBody extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: OnHoverButton(
-                        child: Card(
-                          shadowColor: darkBlue,
-                          elevation: 5,
-                          child: Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Row(
-                              children: [
-                                Align(
-                                  alignment: Alignment.center,
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(
-                                        right: 20.0, left: 20.0),
-                                    child: Container(
-                                      height: 50,
-                                      width: 50,
-                                      child: Image.asset("assets/web_logo.png"),
+                        child: Link(
+                          uri: Uri.parse("/contactpage"),
+                          builder: (context, followLink) => GestureDetector(
+                            onTap: followLink,
+                            child: Card(
+                              shadowColor: darkBlue,
+                              elevation: 5,
+                              child: Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: Row(
+                                  children: [
+                                    Align(
+                                      alignment: Alignment.center,
+                                      child: Padding(
+                                        padding: const EdgeInsets.only(
+                                            right: 15.0, left: 10.0),
+                                        child: Container(
+                                          height: 50,
+                                          width: 50,
+                                          child: Image.asset(
+                                              "assets/web_logo.png"),
+                                        ),
+                                      ),
                                     ),
-                                  ),
+                                    Text(
+                                      "Web App Development",
+                                      style: TextStyle(
+                                          fontSize: 19, fontFamily: "SFCMed"),
+                                    ),
+                                  ],
                                 ),
-                                Text(
-                                  "Web App Development",
-                                  style: TextStyle(
-                                      fontSize: 19, fontFamily: "SFCMed"),
-                                ),
-                              ],
+                              ),
                             ),
                           ),
                         ),
@@ -283,6 +305,16 @@ class MyMobileBody extends StatelessWidget {
                   ),
                 ],
               ),
+            ),
+
+            // Space between services and explore
+            Container(
+              height: 20,
+            ),
+
+            // Web Image
+            Image.asset(
+              "assets/website.jpg",
             ),
 
             // Space between services and explore
@@ -382,11 +414,13 @@ class MyMobileBody extends StatelessWidget {
                         scheme: 'mailto',
                         path: 'codeframe15@gmail.com',
                         query:
-                            'subject=CodeFrame User Mail & body=Hello Please Mention Your Name And Details About Your Project. If You Would Like To contacted Through Phone Call Or Whatsapp Please Mention Your Number.',
+                            'subject=CodeFrame User Mail&body=Hello Please Mention Your Name And Details About Your Project. If You Would Like To contacted Through Phone Call Or Whatsapp Please Mention Your Number.',
                       );
 
                       var url = params.toString();
+                      // ignore: deprecated_member_use
                       if (await canLaunch(url)) {
+                        // ignore: deprecated_member_use
                         await launch(url);
                       } else {
                         throw 'Could not launch $url';

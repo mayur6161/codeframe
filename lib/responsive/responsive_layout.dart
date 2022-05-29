@@ -20,3 +20,24 @@ class ResponsiveLayout extends StatelessWidget {
     );
   }
 }
+
+
+class ResponsiveLayoutContact extends StatelessWidget {
+  final Widget mobileContact;
+  final Widget desktopContact;
+
+  ResponsiveLayoutContact({required this.mobileContact, required this.desktopContact});
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        if (constraints.maxWidth < mobileContactWidth) {
+          return mobileContact;
+        } else {
+          return desktopContact;
+        }
+      },
+    );
+  }
+}

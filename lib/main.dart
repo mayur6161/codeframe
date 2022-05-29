@@ -1,3 +1,6 @@
+import 'package:CodeFrame/responsive/contact_page.dart';
+import 'package:CodeFrame/responsive/desktop_body.dart';
+import 'package:CodeFrame/responsive/mobile_contact.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/link.dart';
 
@@ -20,6 +23,8 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         "/": (context) => HomePage(),
+        "/contactpage": (context) => ContactPage(),
+        "/email_contact" : (context) => EmailContactPage(),
       },
     );
   }
