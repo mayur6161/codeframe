@@ -22,6 +22,7 @@ class _MyDesktopBodyState extends State<MyDesktopBody> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -52,60 +53,59 @@ class _MyDesktopBodyState extends State<MyDesktopBody> {
             SingleChildScrollView(
               child: Column(
                 children: [
-                  // 3 mobile image
-                  Container(
-                    height: 600,
-                    child: Stack(
-                      children: <Widget>[
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            FadeInUp(
-                              child: Container(
-                                width: width / 2,
-                                child: Padding(
-                                  padding: const EdgeInsets.only(
-                                      left: 50.0,
-                                      right: 0.0,
-                                      bottom: 8.0,
-                                      top: 8.0),
-                                  child: Image.asset(
-                                    'assets/threeapppic.jpg',
-                                  ),
+                  SlideInUp(
+                    child: Container(
+                      child: Stack(
+                        children: [
+                          Container(
+                            width: width,
+                            height: 620,
+                          ),
+                          SlideInUp(
+                            child: Align(
+                              alignment: Alignment.topCenter,
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Container(
+                                  height: 600,
+                                  child: Image.asset("assets/webpic.png"),
                                 ),
                               ),
                             ),
-                            FadeInUp(
-                              child: Container(
-                                width: width / 2,
-                                child: Padding(
-                                  padding: const EdgeInsets.only(
-                                      left: 0.0,
-                                      right: 50.0,
-                                      top: 8.0,
-                                      bottom: 8.0),
-                                  child: Image.asset(
-                                    'assets/website.jpg',
-                                  ),
-                                ),
-                              ),
+                          ),
+                          Positioned(
+                            right: 10,
+                            bottom: 10,
+                            child: Container(
+                              width: width / 3,
+                              height: 400,
+                              child: SlideInRight(
+                                  child: Image.asset("assets/mobilepic.png")),
                             ),
-                          ],
-                        ),
+                          ),
+                          Positioned(
+                            left: 10,
+                            bottom: 10,
+                            child: Container(
+                              height: 400,
+                              width: width / 3,
+                              child: SlideInLeft(
+                                  child: Image.asset("assets/ipadpic.png")),
+                            ),
+                          ),
+                          Container(
+                            width: width,
+                            height: 620,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                // top space of the text
+                                Spacer(),
 
-                        // text on the image in blue background
-                        FadeInLeft(
-                          child: Container(
-                              alignment: Alignment.centerLeft,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  // top space of the text
-                                  Spacer(),
-
-                                  // text container
-                                  Container(
-                                    color: darkBlue.withOpacity(0.5),
+                                // text container
+                                SlideInLeft(
+                                  child: Container(
+                                    color: darkBlue,
                                     child: const Padding(
                                       padding: EdgeInsets.only(
                                           left: 20.0,
@@ -113,7 +113,7 @@ class _MyDesktopBodyState extends State<MyDesktopBody> {
                                           bottom: 10.0,
                                           top: 5.0),
                                       child: Text(
-                                        'Step Up',
+                                        'There Is No Perfect Time',
                                         style: TextStyle(
                                             color: Colors.white,
                                             fontWeight: FontWeight.bold,
@@ -121,10 +121,30 @@ class _MyDesktopBodyState extends State<MyDesktopBody> {
                                       ),
                                     ),
                                   ),
+                                ),
 
-                                  // Space Container
-                                  Container(
-                                    height: 5.0,
+                                // Space Container
+                                Container(
+                                  height: 5.0,
+                                  child: const Padding(
+                                    padding: EdgeInsets.only(
+                                        left: 20.0,
+                                        right: 12,
+                                        bottom: 10.0,
+                                        top: 5.0),
+                                    child: Text(
+                                      '',
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 22.0),
+                                    ),
+                                  ),
+                                ),
+
+                                SlideInLeft(
+                                  child: Container(
+                                    color: darkBlue,
                                     child: const Padding(
                                       padding: EdgeInsets.only(
                                           left: 20.0,
@@ -132,38 +152,38 @@ class _MyDesktopBodyState extends State<MyDesktopBody> {
                                           bottom: 10.0,
                                           top: 5.0),
                                       child: Text(
-                                        '',
+                                        'Its Better To Take Action Than',
                                         style: TextStyle(
-                                            color: Colors.black,
+                                            color: Colors.white,
                                             fontWeight: FontWeight.bold,
                                             fontSize: 22.0),
                                       ),
                                     ),
                                   ),
+                                ),
 
-                                  FadeInLeft(
-                                    child: Container(
-                                      color: darkBlue.withOpacity(0.5),
-                                      child: const Padding(
-                                        padding: EdgeInsets.only(
-                                            left: 20.0,
-                                            right: 12,
-                                            bottom: 10.0,
-                                            top: 5.0),
-                                        child: Text(
-                                          'Stop Holding Back',
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 22.0),
-                                        ),
-                                      ),
+                                // Space Container
+                                Container(
+                                  height: 5.0,
+                                  child: const Padding(
+                                    padding: EdgeInsets.only(
+                                        left: 20.0,
+                                        right: 12,
+                                        bottom: 10.0,
+                                        top: 5.0),
+                                    child: Text(
+                                      '',
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 22.0),
                                     ),
                                   ),
+                                ),
 
-                                  // Space Container
-                                  Container(
-                                    height: 5.0,
+                                SlideInLeft(
+                                  child: Container(
+                                    color: darkBlue,
                                     child: const Padding(
                                       padding: EdgeInsets.only(
                                           left: 20.0,
@@ -171,43 +191,341 @@ class _MyDesktopBodyState extends State<MyDesktopBody> {
                                           bottom: 10.0,
                                           top: 5.0),
                                       child: Text(
-                                        '',
+                                        'Keep Waiting And Regretting',
                                         style: TextStyle(
-                                            color: Colors.black,
+                                            color: Colors.white,
                                             fontWeight: FontWeight.bold,
                                             fontSize: 22.0),
                                       ),
                                     ),
                                   ),
+                                ),
 
-                                  FadeInLeft(
-                                    child: Container(
-                                      color: darkBlue.withOpacity(0.5),
-                                      child: const Padding(
-                                        padding: EdgeInsets.only(
-                                            left: 20.0,
-                                            right: 12,
-                                            bottom: 10.0,
-                                            top: 5.0),
-                                        child: Text(
-                                          'This Is The Time',
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 22.0),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
+                                //Container
+                                Container(
+                                  height: 350,
+                                ),
 
-                                  // below space of the text
-                                  const Spacer(),
-                                ],
-                              )),
-                        ),
-                      ],
+                                // below space of the text
+                                const Spacer(),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
+
+                  //Container
+                  Container(
+                    height: 60,
+                  ),
+
+                  // Our Services Container ------------------------------
+                  SlideInUp(
+                    child: Container(
+                      color: lightBlue.withOpacity(0.2),
+                      child: Column(
+                        children: [
+                          //Space on Top
+                          Container(
+                            height: 50,
+                          ),
+
+                          //Our Services ----------------------------------------------
+                          SlideInUp(
+                            child: Container(
+                              child: Text(
+                                "Our Services",
+                                style: TextStyle(
+                                  fontSize: 25,
+                                  color: Colors.black,
+                                  fontFamily: "SFCMed",
+                                ),
+                              ),
+                            ),
+                          ),
+
+                          //Container Space
+                          Container(
+                            height: 40,
+                          ),
+
+                          //Our Services Columns -------------------------------------
+                          Column(
+                            children: [
+                              //Android IOS ------------------------------------------
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  // beside space
+                                  Container(
+                                    width: width / 7,
+                                  ),
+
+                                  //first column
+                                  Container(
+                                    width: width / 3.5,
+                                    child: Column(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text(
+                                            "Android Development",
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              fontSize: 22,
+                                              color: Colors.black,
+                                              fontFamily: "SFCMed",
+                                            ),
+                                          ),
+                                        ),
+                                        Text(
+                                          "Build Custom Android App With Play Store Support And Publish App On Play Store.",
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            fontSize: 18,
+                                            color: Colors.black,
+                                            fontFamily: "SFCMed",
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+
+                                  //Middle space
+                                  Container(
+                                    width: width / 7,
+                                  ),
+
+                                  //Second column
+                                  Container(
+                                    width: width / 3.5,
+                                    child: Column(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text(
+                                            "IOS Development",
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              fontSize: 22,
+                                              color: Colors.black,
+                                              fontFamily: "SFCMed",
+                                            ),
+                                          ),
+                                        ),
+                                        Text(
+                                          "Build Apple Iphone Apps And Publish Apps On App Store.",
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            fontSize: 18,
+                                            color: Colors.black,
+                                            fontFamily: "SFCMed",
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    width: width / 7,
+                                  ),
+                                ],
+                              ),
+
+                              //Space between Two Rows .// second mac and windows
+                              Container(
+                                height: 30,
+                              ),
+
+                              // Mac and windows
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  // beside space
+                                  Container(
+                                    width: width / 7,
+                                  ),
+
+                                  //first column
+                                  SizedBox(
+                                    width: width / 3.5,
+                                    child: Column(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text(
+                                            "Windows Development",
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              fontSize: 22,
+                                              color: Colors.black,
+                                              fontFamily: "SFCMed",
+                                            ),
+                                          ),
+                                        ),
+                                        Text(
+                                          "Build Apps For Windows Operating System.",
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            fontSize: 18,
+                                            color: Colors.black,
+                                            fontFamily: "SFCMed",
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+
+                                  //Middle space
+                                  Container(
+                                    width: width / 7,
+                                  ),
+
+                                  //Second column
+                                  SizedBox(
+                                    width: width / 3.5,
+                                    child: Column(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text(
+                                            "Mac OS Development",
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              fontSize: 22,
+                                              color: Colors.black,
+                                              fontFamily: "SFCMed",
+                                            ),
+                                          ),
+                                        ),
+                                        Text(
+                                          "Build Apps For Apple Mac OS And Publishing App On Mac App Store.",
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            fontSize: 18,
+                                            color: Colors.black,
+                                            fontFamily: "SFCMed",
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    width: width / 7,
+                                  ),
+                                ],
+                              ),
+
+                              //MIddle space between windows and web
+                              Container(height: 30),
+
+                              //Web and Hardware
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  // beside space
+                                  Container(
+                                    width: width / 7,
+                                  ),
+
+                                  //first column
+                                  SizedBox(
+                                    width: width / 3.5,
+                                    child: Column(
+                                      children: const [
+                                        Padding(
+                                          padding: EdgeInsets.all(8.0),
+                                          child: Text(
+                                            "Web Development",
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              fontSize: 22,
+                                              color: Colors.black,
+                                              fontFamily: "SFCMed",
+                                            ),
+                                          ),
+                                        ),
+                                        Text(
+                                          "Build Custom Website That Supports  Mobile And Desktop Browser with Custom Layout.",
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            fontSize: 18,
+                                            color: Colors.black,
+                                            fontFamily: "SFCMed",
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+
+                                  //Middle space
+                                  Container(
+                                    width: width / 7,
+                                  ),
+
+                                  //Second column
+                                  SizedBox(
+                                    width: width / 3.5,
+                                    child: Column(
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Text(
+                                            "IT Support",
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              fontSize: 22,
+                                              color: Colors.black,
+                                              fontFamily: "SFCMed",
+                                            ),
+                                          ),
+                                        ),
+                                        Text(
+                                          "Setup Office Hardware And Software. "
+                                          "Get Help With IT Related Queries.",
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            fontSize: 18,
+                                            color: Colors.black,
+                                            fontFamily: "SFCMed",
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    width: width / 7,
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+
+                          //Container
+                          Container(
+                            height: 70,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  //Space below Our services
+                  Container(height: 40,),
+
+                  //Quick Menu
+                  Text(
+                    "Quick Access",
+                    style: TextStyle(
+                      fontSize: 25,
+                      color: Colors.black,
+                      fontFamily: "SFCMed",
+                    ),
+                  ),
+
+                  //Space below Quick Access
+                  Container(height: 20,),
 
                   // Services App development and web development
                   Container(
@@ -352,20 +670,7 @@ class _MyDesktopBodyState extends State<MyDesktopBody> {
 
                   // Space between services and web image
                   Container(
-                    height: 20,
-                  ),
-
-                  // Web Image
-                  Container(
-                    width: width / 2,
-                    child: Image.asset(
-                      "assets/website.jpg",
-                    ),
-                  ),
-
-                  // Space between services and explore
-                  Container(
-                    height: 20,
+                    height: 30,
                   ),
 
                   // Explore CodeFrame
@@ -395,7 +700,7 @@ class _MyDesktopBodyState extends State<MyDesktopBody> {
                                 left: 26.0,
                                 right: 26.0),
                             child: Text(
-                              "Building Software Is Expensive And Most Of The Idea Become an Idea only. Do Not Have To Worry Anymore. We Are Here To Make Software Development More Affordable And To Bring Your Ideas Into Reality. Take Your Business And Ideas To The Next Level.",
+                              "Building Software Is Expensive And Most Of The Time Making Own App Becomes A Dream Only. Do Not Have To Worry Anymore. We Are Here To Make Software Development More Affordable And To Bring Your Ideas Into Reality. Take Your Business And Ideas To The Next Level.",
                               style:
                                   TextStyle(fontSize: 19, fontFamily: "SFCMed"),
                             ),
@@ -516,7 +821,7 @@ class _MyDesktopBodyState extends State<MyDesktopBody> {
                               }),
                             ),
                             onTap: () async {
-                              const url = 'https://wa.me/+918605824874';
+                              const url = 'https://wa.me/+919673581742';
 
                               // ignore: deprecated_member_use
                               if (await canLaunch(url)) {
@@ -654,100 +959,102 @@ class EmailContactPage extends StatelessWidget {
 
       //Email contact
 
-      body: Container(
-        // contact email
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Container(
-              height: 60,
-            ),
-
-            Container(
-              height: 20,
-              child: const Text(
-                "Email Address",
-                style: TextStyle(fontSize: 19, fontFamily: "SFCMed"),
+      body: SlideInUp(
+        child: Container(
+          // contact email
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                height: 60,
               ),
-            ),
 
-            Container(
-              height: 30,
-            ),
+              Container(
+                height: 20,
+                child: const Text(
+                  "Email Address",
+                  style: TextStyle(fontSize: 19, fontFamily: "SFCMed"),
+                ),
+              ),
 
-            Container(
-              child: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Card(
-                  shadowColor: darkBlue,
-                  child: Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: SelectableText(
-                      "codeframe15@gmail.com",
-                      style: TextStyle(
-                          fontSize: 19, fontFamily: "SFCMed", color: darkBlue),
+              Container(
+                height: 30,
+              ),
+
+              Container(
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Card(
+                    shadowColor: darkBlue,
+                    child: Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: SelectableText(
+                        "codeframe15@gmail.com",
+                        style: TextStyle(
+                            fontSize: 19, fontFamily: "SFCMed", color: darkBlue),
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
 
-            Container(
-              height: 40,
-            ),
+              Container(
+                height: 40,
+              ),
 
-            // Gmail send Button
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Link(
-                    target: LinkTarget.blank,
-                    uri: Uri.parse("https://mail.google.com/"),
-                    builder: (context, followLink) => GestureDetector(
-                      onTap: followLink,
-                      child: Card(
-                        shadowColor: darkBlue,
-                        elevation: 5.0,
-                        child: Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Row(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(left: 20.0),
-                                child: FaIcon(
-                                  Icons.email_outlined,
-                                  color: darkBlue,
-                                  size: 40,
+              // Gmail send Button
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Link(
+                      target: LinkTarget.blank,
+                      uri: Uri.parse("https://mail.google.com/"),
+                      builder: (context, followLink) => GestureDetector(
+                        onTap: followLink,
+                        child: Card(
+                          shadowColor: darkBlue,
+                          elevation: 5.0,
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Row(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 20.0),
+                                  child: FaIcon(
+                                    Icons.email_outlined,
+                                    color: darkBlue,
+                                    size: 40,
+                                  ),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(
-                                    left: 10.0, right: 20.0),
-                                child: OnHoverText(builder: (isHovered) {
-                                  final color =
-                                      isHovered ? Colors.black : darkBlue;
-                                  return Text(
-                                    "Open Gmail",
-                                    style: TextStyle(
-                                      color: color,
-                                      fontSize: 19,
-                                      fontFamily: "SFCMed",
-                                    ),
-                                  );
-                                }),
-                              ),
-                            ],
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      left: 10.0, right: 20.0),
+                                  child: OnHoverText(builder: (isHovered) {
+                                    final color =
+                                        isHovered ? Colors.black : darkBlue;
+                                    return Text(
+                                      "Open Gmail",
+                                      style: TextStyle(
+                                        color: color,
+                                        fontSize: 19,
+                                        fontFamily: "SFCMed",
+                                      ),
+                                    );
+                                  }),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
 

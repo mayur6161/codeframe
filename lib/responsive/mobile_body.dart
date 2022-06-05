@@ -9,7 +9,6 @@ import 'package:url_launcher/link.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../widgets/hover.dart';
-import 'contact_page.dart';
 
 class MyMobileBody extends StatefulWidget {
   const MyMobileBody({Key? key}) : super(key: key);
@@ -23,6 +22,7 @@ class _MyMobileBodyState extends State<MyMobileBody> {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: const Center(
@@ -52,137 +52,126 @@ class _MyMobileBodyState extends State<MyMobileBody> {
             SingleChildScrollView(
               child: Column(
                 children: [
-                  // 3 mobile image
+                  //mobile and tablet image
                   Container(
-                    height: 600,
-                    child: Stack(
-                      children: <Widget>[
-                        FadeInUp(
-                          child: Container(
-                            alignment: Alignment.center,
-                            child: Image.asset(
-                              'assets/threeapppic.jpg',
+                    height: 400,
+                    child: Padding(
+                      padding: const EdgeInsets.all(1.0),
+                      child: Stack(
+                        children: [
+                          Positioned(
+                              child: SlideInUp(
+                                  child: Image.asset("assets/webpic.png"))),
+                          Positioned(
+                              left: 1,
+                              bottom: 1,
+                              child: SizedBox(
+                                  height: 280,
+                                  child: SlideInLeft(
+                                      child:
+                                          Image.asset("assets/ipadpic.png")))),
+                          Positioned(
+                              right: 1,
+                              bottom: 1,
+                              child: SizedBox(
+                                  height: 300,
+                                  child: SlideInRight(
+                                      child: Image.asset(
+                                          "assets/mobilepic.png")))),
+                          Positioned(
+                            left: 1,
+                            top: 5,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SlideInLeft(
+                                  child: Container(
+                                    color: darkBlue,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                          left: 10.0,
+                                          right: 5.0,
+                                          top: 3.0,
+                                          bottom: 3.0),
+                                      child: Text(
+                                        "There Is No Perfect Time.",
+                                        style: TextStyle(
+                                            fontSize: 16.0,
+                                            fontFamily: "SFCMed",
+                                            color: Colors.white),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Container(height: 3),
+                                SlideInLeft(
+                                  child: Container(
+                                    color: darkBlue,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                          left: 10.0,
+                                          right: 5.0,
+                                          top: 3.0,
+                                          bottom: 3.0),
+                                      child: Text(
+                                        "Its Better To Take Action",
+                                        style: TextStyle(
+                                            fontSize: 16.0,
+                                            fontFamily: "SFCMed",
+                                            color: Colors.white),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Container(height: 3),
+                                SlideInLeft(
+                                  child: Container(
+                                    color: darkBlue,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                          left: 10.0,
+                                          right: 5.0,
+                                          top: 3.0,
+                                          bottom: 3.0),
+                                      child: Text(
+                                        "Than Keep Waiting Regretting.",
+                                        style: TextStyle(
+                                            fontSize: 16.0,
+                                            fontFamily: "SFCMed",
+                                            color: Colors.white),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
-                        ),
-
-                        // text on the image in blue background
-                        FadeInLeft(
-                          child: Container(
-                              alignment: Alignment.centerLeft,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  // top space of the text
-                                  Spacer(),
-
-                                  // text container
-                                  Container(
-                                    color: darkBlue.withOpacity(0.5),
-                                    child: const Padding(
-                                      padding: EdgeInsets.only(
-                                          left: 20.0,
-                                          right: 12,
-                                          bottom: 10.0,
-                                          top: 5.0),
-                                      child: Text(
-                                        'Step Up',
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 22.0),
-                                      ),
-                                    ),
-                                  ),
-
-                                  // Space Container
-                                  Container(
-                                    height: 5.0,
-                                    child: const Padding(
-                                      padding: EdgeInsets.only(
-                                          left: 20.0,
-                                          right: 12,
-                                          bottom: 10.0,
-                                          top: 5.0),
-                                      child: Text(
-                                        '',
-                                        style: TextStyle(
-                                            color: Colors.black,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 22.0),
-                                      ),
-                                    ),
-                                  ),
-
-                                  FadeInLeft(
-                                    child: Container(
-                                      color: darkBlue.withOpacity(0.5),
-                                      child: const Padding(
-                                        padding: EdgeInsets.only(
-                                            left: 20.0,
-                                            right: 12,
-                                            bottom: 10.0,
-                                            top: 5.0),
-                                        child: Text(
-                                          'Stop Holding Back',
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 22.0),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-
-                                  // Space Container
-                                  Container(
-                                    height: 5.0,
-                                    child: const Padding(
-                                      padding: EdgeInsets.only(
-                                          left: 20.0,
-                                          right: 12,
-                                          bottom: 10.0,
-                                          top: 5.0),
-                                      child: Text(
-                                        '',
-                                        style: TextStyle(
-                                            color: Colors.black,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 22.0),
-                                      ),
-                                    ),
-                                  ),
-
-                                  FadeInLeft(
-                                    child: Container(
-                                      color: darkBlue.withOpacity(0.5),
-                                      child: const Padding(
-                                        padding: EdgeInsets.only(
-                                            left: 20.0,
-                                            right: 12,
-                                            bottom: 10.0,
-                                            top: 5.0),
-                                        child: Text(
-                                          'This Is The Time',
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.bold,
-                                              fontSize: 22.0),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-
-                                  // below space of the text
-                                  const Spacer(),
-                                ],
-                              )),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
 
-                  // Services App development and web development
+                  //Space below Images
+                  Container(
+                    height: 40,
+                  ),
+
+                  //Quick Access
+                  SlideInUp(
+                    child: Text(
+                      "Quick Access",
+                      style: TextStyle(
+                        fontSize: 25,
+                        color: Colors.black,
+                        fontFamily: "SFCMed",
+                      ),
+                    ),
+                  ),
+
+                  //Space below Quick Access
+                  Container(
+                    height: 20,
+                  ),
 
                   Container(
                     child: Column(
@@ -327,21 +316,7 @@ class _MyMobileBodyState extends State<MyMobileBody> {
                     ),
                   ),
 
-                  // Space between services and explore
-                  Container(
-                    height: 20,
-                  ),
-
-                  // Web Image
-                  Image.asset(
-                    "assets/website.jpg",
-                  ),
-
-                  // Space between services and explore
-                  Container(
-                    height: 20,
-                  ),
-
+                  Container(height: 20),
                   // Explore CodeFrame
                   JelloIn(
                     child: Container(
@@ -361,7 +336,7 @@ class _MyMobileBodyState extends State<MyMobileBody> {
                           Padding(
                             padding: const EdgeInsets.all(13.0),
                             child: Text(
-                              "Building Software Is Expensive And Most Of The Idea Become an Idea only. Do Not Have To Worry Anymore. We Are Here To Make Software Development More Affordable And To Bring Your Ideas Into Reality. Take Your Business And Ideas To The Next Level.",
+                              "Building Software Is Expensive And Most Of The Time Making Own App Becomes A Dream Only. Do Not Have To Worry Anymore. We Are Here To Make Software Development More Affordable And To Bring Your Ideas Into Reality. Take Your Business And Ideas To The Next Level.",
                               style:
                                   TextStyle(fontSize: 19, fontFamily: "SFCMed"),
                             ),
@@ -388,7 +363,7 @@ class _MyMobileBodyState extends State<MyMobileBody> {
                     ),
                   ),
 
-                  // Space up
+                  //Space between Explore and contact us
                   Container(
                     height: 35,
                   ),
@@ -440,7 +415,7 @@ class _MyMobileBodyState extends State<MyMobileBody> {
                               scheme: 'mailto',
                               path: 'codeframe15@gmail.com',
                               query:
-                                  'subject=CodeFrame User Mail&body=Hello Please Mention Your Name And Details About Your Project. If You Would Like To contacted Through Phone Call Or Whatsapp Please Mention Your Number.',
+                                  'subject=CodeFrame User Mail&body=Hello Please Mention Your Name And Details About Your Project. If You Would Like To contacted Through Phone Call Or WhatsApp Please Mention Your Number.',
                             );
 
                             var url = params.toString();
@@ -476,7 +451,7 @@ class _MyMobileBodyState extends State<MyMobileBody> {
                             child: OnHoverText(builder: (isHovered) {
                               final color = isHovered ? Colors.black : darkBlue;
                               return Text(
-                                "Chat On Whatsapp",
+                                "Chat On WhatsApp",
                                 style: TextStyle(
                                   color: color,
                                   fontSize: 19,
@@ -486,7 +461,7 @@ class _MyMobileBodyState extends State<MyMobileBody> {
                             }),
                           ),
                           onTap: () async {
-                            const url = 'https://wa.me/+918605824874';
+                            const url = 'https://wa.me/+919673581742';
 
                             // ignore: deprecated_member_use
                             if (await canLaunch(url)) {
@@ -547,8 +522,304 @@ class _MyMobileBodyState extends State<MyMobileBody> {
                   ),
 
                   Container(
-                    height: 50,
+                    height: 40,
                   ),
+
+
+                 Container(
+                   color: lightBlue.withOpacity(0.2)
+                   ,child: Column(
+                   children: [
+
+
+
+
+
+                     //Space on Top
+                     Container(
+                       height: 30,
+                     ),
+
+
+                     //Our Services ----------------------------------------------
+                     SlideInUp(
+                       child: Container(
+                         child: Text(
+                           "Our Services",
+                           style: TextStyle(
+                             fontSize: 22,
+                             color: Colors.black,
+                             fontFamily: "SFCMed",
+                           ),
+                         ),
+                       ),
+                     ),
+
+                     //Container Space
+                     Container(
+                       height:20,
+                     ),
+
+
+                     Column(
+                       children: [
+                         //Android IOS ------------------------------------------
+                         Row(
+                           crossAxisAlignment: CrossAxisAlignment.start,
+                           children: [
+                             // beside space
+                             Container(
+                               width: width / 20,
+                             ),
+
+                             //first column
+                             Container(
+                               width: width / 2.4,
+                               child: Column(
+                                 children: [
+                                   Padding(
+                                     padding: const EdgeInsets.all(8.0),
+                                     child: Text(
+                                       "Android Development",
+                                       textAlign: TextAlign.center,
+                                       style: TextStyle(
+                                         fontSize: 16,
+                                         color: Colors.black,
+                                         fontFamily: "SFCMed",
+                                       ),
+                                     ),
+                                   ),
+                                   Text(
+                                     "Build Custom Android App With Play Store Support And Publish App On Play Store.",
+                                     textAlign: TextAlign.center,
+                                     style: TextStyle(
+                                       fontSize: 12,
+                                       color: Colors.black,
+                                       fontFamily: "SFCMed",
+                                     ),
+                                   ),
+                                 ],
+                               ),
+                             ),
+
+                             //Middle space
+                             Container(
+                               width: width / 20,
+                             ),
+
+                             //Second column
+                             Container(
+                               width: width / 2.4,
+                               child: Column(
+                                 children: [
+                                   Padding(
+                                     padding: const EdgeInsets.all(8.0),
+                                     child: Text(
+                                       "IOS Development",
+                                       textAlign: TextAlign.center,
+                                       style: TextStyle(
+                                         fontSize: 16,
+                                         color: Colors.black,
+                                         fontFamily: "SFCMed",
+                                       ),
+                                     ),
+                                   ),
+                                   Text(
+                                     "Build Apple Iphone Apps And Publish Apps On App Store.",
+                                     textAlign: TextAlign.center,
+                                     style: TextStyle(
+                                       fontSize: 12,
+                                       color: Colors.black,
+                                       fontFamily: "SFCMed",
+                                     ),
+                                   ),
+                                 ],
+                               ),
+                             ),
+                             Container(
+                               width: width / 20,
+                             ),
+                           ],
+                         ),
+
+                         //Space between Two Rows .// second mac and windows
+                         Container(
+                           height: 20,
+                         ),
+
+                         // Mac and windows
+                         Row(
+                           crossAxisAlignment: CrossAxisAlignment.start,
+                           children: [
+                             // beside space
+                             Container(
+                               width: width / 20,
+                             ),
+
+                             //first column
+                             SizedBox(
+                               width: width / 2.4,
+                               child: Column(
+                                 children: [
+                                   Padding(
+                                     padding: const EdgeInsets.all(8.0),
+                                     child: Text(
+                                       "Windows Development",
+                                       textAlign: TextAlign.center,
+                                       style: TextStyle(
+                                         fontSize: 16,
+                                         color: Colors.black,
+                                         fontFamily: "SFCMed",
+                                       ),
+                                     ),
+                                   ),
+                                   Text(
+                                     "Build Apps For Windows Operating System.",
+                                     textAlign: TextAlign.center,
+                                     style: TextStyle(
+                                       fontSize: 12,
+                                       color: Colors.black,
+                                       fontFamily: "SFCMed",
+                                     ),
+                                   ),
+                                 ],
+                               ),
+                             ),
+
+                             //Middle space
+                             Container(
+                               width: width / 20,
+                             ),
+
+                             //Second column
+                             SizedBox(
+                               width: width / 2.4,
+                               child: Column(
+                                 children: [
+                                   Padding(
+                                     padding: const EdgeInsets.all(8.0),
+                                     child: Text(
+                                       "Mac OS Development",
+                                       textAlign: TextAlign.center,
+                                       style: TextStyle(
+                                         fontSize: 16,
+                                         color: Colors.black,
+                                         fontFamily: "SFCMed",
+                                       ),
+                                     ),
+                                   ),
+                                   Text(
+                                     "Build Apps For Apple Mac OS And Publishing App On Mac App Store.",
+                                     textAlign: TextAlign.center,
+                                     style: TextStyle(
+                                       fontSize: 12,
+                                       color: Colors.black,
+                                       fontFamily: "SFCMed",
+                                     ),
+                                   ),
+                                 ],
+                               ),
+                             ),
+                             Container(
+                               width: width / 20,
+                             ),
+                           ],
+                         ),
+
+                         //MIddle space between windows and web
+                         Container(height: 20),
+
+                         //Web and Hardware
+                         Row(
+                           crossAxisAlignment: CrossAxisAlignment.start,
+                           children: [
+                             // beside space
+                             Container(
+                               width: width / 20,
+                             ),
+
+                             //first column
+                             SizedBox(
+                               width: width / 2.4,
+                               child: Column(
+                                 children: const [
+                                   Padding(
+                                     padding: EdgeInsets.all(8.0),
+                                     child: Text(
+                                       "Web Development",
+                                       textAlign: TextAlign.center,
+                                       style: TextStyle(
+                                         fontSize: 16,
+                                         color: Colors.black,
+                                         fontFamily: "SFCMed",
+                                       ),
+                                     ),
+                                   ),
+                                   Text(
+                                     "Build Custom Website That Supports  Mobile And Desktop Browser with Custom Layout.",
+                                     textAlign: TextAlign.center,
+                                     style: TextStyle(
+                                       fontSize: 12,
+                                       color: Colors.black,
+                                       fontFamily: "SFCMed",
+                                     ),
+                                   ),
+                                 ],
+                               ),
+                             ),
+
+                             //Middle space
+                             Container(
+                               width: width / 20,
+                             ),
+
+                             //Second column
+                             SizedBox(
+                               width: width / 2.4,
+                               child: Column(
+                                 children: [
+                                   Padding(
+                                     padding: const EdgeInsets.all(8.0),
+                                     child: Text(
+                                       "IT Support",
+                                       textAlign: TextAlign.center,
+                                       style: TextStyle(
+                                         fontSize: 16,
+                                         color: Colors.black,
+                                         fontFamily: "SFCMed",
+                                       ),
+                                     ),
+                                   ),
+                                   Text(
+                                     "Setup Office Hardware And Software. "
+                                         "Get Help With IT Related Queries.",
+                                     textAlign: TextAlign.center,
+                                     style: TextStyle(
+                                       fontSize: 12,
+                                       color: Colors.black,
+                                       fontFamily: "SFCMed",
+                                     ),
+                                   ),
+                                 ],
+                               ),
+                             ),
+                             Container(
+                               width: width / 20,
+                             ),
+                           ],
+                         ),
+                       ],
+                     ),
+
+                     Container(height: 30,),
+
+
+
+
+                   ],
+                 ),),
+
+                  //=========================================================
 
                   // Terms and policy bar down
                   Container(
