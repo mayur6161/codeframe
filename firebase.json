@@ -1,6 +1,5 @@
 {
   "hosting": {
-    "site": "codeframe",
     "public": "build/web",
     "ignore": [
       "firebase.json",

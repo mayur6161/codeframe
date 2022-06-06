@@ -1,7 +1,8 @@
 {
   "projects": {
     "default": "codeframe-d56ea",
-    "^Z": "codeframe-d56ea"
+    "^Z": "codeframe-d56ea",
+    "codeframe": "codeframe-d56ea"
   },
   "targets": {}
 }
