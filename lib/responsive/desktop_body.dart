@@ -1,3 +1,4 @@
+import 'package:expandable/expandable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:CodeFrame/colours.dart';
@@ -218,13 +219,15 @@ class _MyDesktopBodyState extends State<MyDesktopBody> {
 
                   //Container
                   Container(
-                    height: 60,
+                    height: 70,
                   ),
+
+                  Container(height: 0.1, color: Colors.black.withOpacity(0.2)),
 
                   // Our Services Container ------------------------------
                   SlideInUp(
                     child: Container(
-                      color: lightBlue.withOpacity(0.2),
+                      color: darkBlue.withOpacity(0.2),
                       child: Column(
                         children: [
                           //Space on Top
@@ -510,9 +513,14 @@ class _MyDesktopBodyState extends State<MyDesktopBody> {
                       ),
                     ),
                   ),
+                  Container(height: 0.1, color: Colors.black.withOpacity(0.2)),
 
                   //Space below Our services
-                  Container(height: 40,),
+                  Container(
+                    height: 70,
+                  ),
+
+
 
                   //Quick Menu
                   Text(
@@ -525,7 +533,9 @@ class _MyDesktopBodyState extends State<MyDesktopBody> {
                   ),
 
                   //Space below Quick Access
-                  Container(height: 20,),
+                  Container(
+                    height: 30,
+                  ),
 
                   // Services App development and web development
                   Container(
@@ -670,8 +680,9 @@ class _MyDesktopBodyState extends State<MyDesktopBody> {
 
                   // Space between services and web image
                   Container(
-                    height: 30,
+                    height: 70,
                   ),
+
 
                   // Explore CodeFrame
                   JelloIn(
@@ -679,7 +690,7 @@ class _MyDesktopBodyState extends State<MyDesktopBody> {
                       width: width / 1.3,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
-                        color: lightBlue.withOpacity(0.2),
+                        color: darkBlue.withOpacity(0.2),
                       ),
                       child: Column(
                         children: [
@@ -729,7 +740,12 @@ class _MyDesktopBodyState extends State<MyDesktopBody> {
 
                   // Space up
                   Container(
-                    height: 35,
+                    height: 70,
+                  ),
+
+                  Container(height: 0.1, color: Colors.black.withOpacity(0.2)),
+                  Container(
+                    height: 60,
                   ),
                   // Contact us text
                   Container(
@@ -743,7 +759,7 @@ class _MyDesktopBodyState extends State<MyDesktopBody> {
                   ),
                   //Space down
                   Container(
-                    height: 20,
+                    height: 40,
                   ),
 
                   // contact email
@@ -887,7 +903,249 @@ class _MyDesktopBodyState extends State<MyDesktopBody> {
                   ),
 
                   Container(
+                    height: 60,
+                  ),
+
+                  Container(height: 0.1, color: Colors.black.withOpacity(0.2)),
+                  Container(
                     height: 50,
+                  ),
+
+                  Container(
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            "Our mission",
+                            style: TextStyle(
+                              fontSize: 25,
+                              fontFamily: "SFCMed",
+                              color: Colors.black.withOpacity(0.8),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            "We want to make easier for everyone to go to online world. "
+                            "Taking their mission to digital platform and succeed them."
+                            "",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 19,
+                              color: Colors.black.withOpacity(0.7),
+                              fontFamily: "SFCMed",
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 50,
+                        ),
+                        Container(
+                            height: 0.1, color: Colors.black.withOpacity(0.2)),
+                        Container(
+                          height: 50,
+                        ),
+                        Text(
+                          "Frequently asked questions",
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontFamily: "SFCMed",
+                            color: Colors.black.withOpacity(0.8),
+                          ),
+                        ),
+                        Container(
+                          height: 40,
+                        ),
+                        ExpandablePanel(
+                          header: Padding(
+                            padding:
+                                const EdgeInsets.only(left: 40.0, right: 40.0),
+                            child: Center(
+                              child: Text(
+                                "How we can help you?",
+                                style: TextStyle(
+                                    fontFamily: "SFCMed",
+                                    fontSize: 19,
+                                    color: Colors.black.withOpacity(0.8)),
+                              ),
+                            ),
+                          ),
+                          collapsed: Padding(
+                            padding:
+                                const EdgeInsets.only(left: 40.0, right: 40.0),
+                            child: Center(
+                              child: Text(
+                                "We build all platform of apps and website.",
+                                style: TextStyle(
+                                    fontSize: 19,
+                                    fontFamily: "SFCMed",
+                                    color: Colors.black.withOpacity(0.6)),
+                              ),
+                            ),
+                          ),
+                          expanded: Padding(
+                            padding:
+                                const EdgeInsets.only(left: 40.0, right: 40.0),
+                            child: Center(
+                              child: Text(
+                                "We build all platform of apps and website. We also "
+                                "help setting up office as per requirement with "
+                                "software as well as hardware setup.",
+                                style: TextStyle(
+                                    fontSize: 19,
+                                    fontFamily: "SFCMed",
+                                    color: Colors.black.withOpacity(0.6)),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 25,
+                        ),
+                        ExpandablePanel(
+                          header: Padding(
+                            padding:
+                                const EdgeInsets.only(left: 40.0, right: 40.0),
+                            child: Center(
+                              child: Text(
+                                "Do i need to know about anything about programming?",
+                                style: TextStyle(
+                                    fontSize: 19,
+                                    fontFamily: "SFCMed",
+                                    color: Colors.black.withOpacity(0.8)),
+                              ),
+                            ),
+                          ),
+                          collapsed: Padding(
+                            padding:
+                                const EdgeInsets.only(left: 40.0, right: 40.0),
+                            child: Center(
+                              child: Text(
+                                "No. You don't have to know anything.",
+                                style: TextStyle(
+                                    fontSize: 19,
+                                    fontFamily: "SFCMed",
+                                    color: Colors.black.withOpacity(0.6)),
+                              ),
+                            ),
+                          ),
+                          expanded: Padding(
+                            padding:
+                                const EdgeInsets.only(left: 40.0, right: 40.0),
+                            child: Center(
+                              child: Text(
+                                "No. You don't have to know anything about programming. "
+                                "You just have to tell us about your business app and "
+                                "your goal and we will build as per your requirement and "
+                                "best suite for your business. ",
+                                style: TextStyle(
+                                    fontSize: 19,
+                                    fontFamily: "SFCMed",
+                                    color: Colors.black.withOpacity(0.6)),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 25,
+                        ),
+                        ExpandablePanel(
+                          header: Padding(
+                            padding:
+                                const EdgeInsets.only(left: 40.0, right: 40.0),
+                            child: Center(
+                              child: Text(
+                                "My budget is low can i build apps with CodeFrame?",
+                                style: TextStyle(
+                                    fontSize: 19,
+                                    fontFamily: "SFCMed",
+                                    color: Colors.black.withOpacity(0.8)),
+                              ),
+                            ),
+                          ),
+                          collapsed: Padding(
+                            padding:
+                                const EdgeInsets.only(left: 40.0, right: 40.0),
+                            child: Center(
+                              child: Text(
+                                "Yes. We build apps in best price.",
+                                style: TextStyle(
+                                    fontSize: 19,
+                                    fontFamily: "SFCMed",
+                                    color: Colors.black.withOpacity(0.6)),
+                              ),
+                            ),
+                          ),
+                          expanded: Padding(
+                            padding:
+                                const EdgeInsets.only(left: 40.0, right: 40.0),
+                            child: Center(
+                              child: Text(
+                                "Yes. We build apps in best price and our mission is "
+                                "to make everyone available apps and websites in "
+                                "lowest price possible. We offer EMI payments and "
+                                "monthly payments without bank statement or credit "
+                                " card. ",
+                                style: TextStyle(
+                                    fontSize: 19,
+                                    fontFamily: "SFCMed",
+                                    color: Colors.black.withOpacity(0.6)),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 25,
+                        ),
+                        ExpandablePanel(
+                          header: Padding(
+                            padding:
+                                const EdgeInsets.only(left: 40.0, right: 40.0),
+                            child: Center(
+                              child: Text(
+                                "Can we discuss personally?",
+                                style: TextStyle(
+                                    fontSize: 19,
+                                    fontFamily: "SFCMed",
+                                    color: Colors.black.withOpacity(0.8)),
+                              ),
+                            ),
+                          ),
+                          collapsed: Padding(
+                            padding:
+                                const EdgeInsets.only(left: 40.0, right: 40.0),
+                            child: Center(
+                              child: Text(
+                                "Yes. You can ask for personal meeting. ",
+                                style: TextStyle(
+                                    fontSize: 19,
+                                    fontFamily: "SFCMed",
+                                    color: Colors.black.withOpacity(0.6)),
+                              ),
+                            ),
+                          ),
+                          expanded: Padding(
+                            padding:
+                                const EdgeInsets.only(left: 40.0, right: 40.0),
+                            child: Center(
+                              child: Text(
+                                "Yes. You can ask for personal meeting to discuss about "
+                                "your apps and website building. ",
+                                style: TextStyle(
+                                    fontSize: 19,
+                                    fontFamily: "SFCMed",
+                                    color: Colors.black.withOpacity(0.6)),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Container(
+                          height: 40,
+                        ),
+                      ],
+                    ),
                   ),
 
                   // Terms and policy bar down
@@ -904,7 +1162,7 @@ class _MyDesktopBodyState extends State<MyDesktopBody> {
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
+                      children: const [
                         Text(" CodeFrame  |"),
                         Text(
                           "  ©",
@@ -991,7 +1249,9 @@ class EmailContactPage extends StatelessWidget {
                       child: SelectableText(
                         "codeframe15@gmail.com",
                         style: TextStyle(
-                            fontSize: 19, fontFamily: "SFCMed", color: darkBlue),
+                            fontSize: 19,
+                            fontFamily: "SFCMed",
+                            color: darkBlue),
                       ),
                     ),
                   ),
